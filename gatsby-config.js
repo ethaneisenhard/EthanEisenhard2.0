@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Digital Air Media`,
-    description: `Digital Air Media Boilerplate`,
+    title: `Ethan Eisenhard`,
+    description: `Web Developer and Photographer`,
     author: `@ethaneisenhard`
   },
   plugins: [

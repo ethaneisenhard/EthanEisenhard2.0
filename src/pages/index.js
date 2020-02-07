@@ -4,16 +4,18 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 // import Image from "../components/image"
 import SEO from "../components/seo"
+import Img from "gatsby-image"
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <section id = "homePage">
         <section className = "hero">
           <div className = "contain">
-            <h2>Web Development and Photography Agency</h2>
-            <p>Welcome to your new future.</p>
-            <p>Lets build something great.</p>
+            <h2>Hi, my name is Ethan</h2>
+            <Img fluid={data.file.childImageSharp.fluid} />
+            <p>I am a web developer and photographer from Philadelphia! I build marketing sites, business applications, and create professional photos.</p>
+            <p>Currently working at the Toll Brothers.</p>
           </div>
         </section>
         <section className = "about">
@@ -57,3 +59,15 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "EthanEisenhard.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
